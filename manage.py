@@ -23,6 +23,6 @@ def main():
 if __name__ == "__main__":
     # Load environment variables from .env file
     load_dotenv()
-    obb.user.credentials.fmp_api_key = os.getenv("OPENBB_FMP_API_KEY") # todo put this in a nicer spot
+    obb.user.credentials.fmp_api_key = os.getenv("OPENBB_FMP_API_KEY") # todo put this in a better spot
     main()
     
