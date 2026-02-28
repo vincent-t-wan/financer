@@ -1,0 +1,1 @@
+Reminder to run `.\.venv\bin\Activate.ps1`
