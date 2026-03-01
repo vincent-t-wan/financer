@@ -42,10 +42,10 @@ class BacktesterSerializer(serializers.Serializer):
         required=False
     )
     daily_returns = serializers.ListField(
-        child=serializers.FloatField(),
+        child=serializers.DictField(),
         required=False
     )
     portfolio_values = serializers.ListField(
-        child=serializers.FloatField(),
+        child=serializers.DictField(),
         required=False
     )

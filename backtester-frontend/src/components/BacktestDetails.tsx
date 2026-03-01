@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { BacktestRun } from '../types';
+import EquityGraph from './graphs/EquityGraph';
+import PortfolioValueGraph from './graphs/PortfolioValueGraph';
+import DailyReturnsGraph from './graphs/DailyReturnsGraph';
+import DrawdownGraph from './graphs/DrawdownGraph';
 
 const Overlay = styled.div`
   position: fixed;
@@ -237,6 +241,15 @@ const BacktestDetails: React.FC<Props> = ({ backtest, onClose }) => {
             <CodeBlock>
               {JSON.stringify(backtest.strategy_config, null, 2)}
             </CodeBlock>
+          </Section>
+
+          {/* Graphs */}
+          <Section>
+            <SectionTitle>Graphs</SectionTitle>
+            <PortfolioValueGraph data={backtest.portfolio_values} />
+            <DailyReturnsGraph data={backtest.daily_returns} />
+            <DrawdownGraph data={backtest.drawdown_curve} />
+            <EquityGraph data={backtest.equity_curve} />
           </Section>
         </ModalContent>
       </Modal>

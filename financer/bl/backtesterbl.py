@@ -103,7 +103,7 @@ class BacktesterBL:
                 commission_fixed=commission_fixed
             )
             backtester.backtest(data)
-            performance = backtester.calculate_performance()  # Don't plot in BL
+            performance = backtester.calculate_performance()
             
             # Update backtest results to database
             BacktesterDAL.update_backtest_results(backtest_run.id, performance)

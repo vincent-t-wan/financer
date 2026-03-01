@@ -26,8 +26,8 @@ const FormSection = styled.div`
 `;
 
 const SectionTitle = styled.h3`
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 17px;
+  font-weight: 550;
   color: #374151;
   margin-bottom: 12px;
 `;

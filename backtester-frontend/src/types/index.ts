@@ -18,6 +18,12 @@ export interface BacktestRun {
   updated_at: string;
   status: 'pending' | 'completed' | 'failed';
   error_message: string | null;
+
+  // graph fields
+  equity_curve: { date: string; value: number }[];
+  drawdown_curve: { date: string; drawdown: number }[];
+  daily_returns: { date: string; value: number }[];
+  portfolio_values: { date: string; value: number }[];
 }
 
 export interface StrategyConfig {

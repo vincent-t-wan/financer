@@ -14,5 +14,5 @@ class BacktestResult:
     # Graph data
     equity_curve: List[Dict[str, float]]  # [{"date": timestamp, "value": float}]
     drawdown_curve: List[Dict[str, float]]  # [{"date": timestamp, "drawdown": float}]
-    daily_returns: List[float]  # List of daily returns
-    portfolio_values: List[float]  # Raw portfolio values
+    daily_returns: List[Dict[str, float]]   # List of daily returns
+    portfolio_values: List[Dict[str, float]]   # Raw portfolio values
