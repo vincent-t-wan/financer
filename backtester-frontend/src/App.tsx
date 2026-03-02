@@ -5,6 +5,7 @@ import BacktestHistory from './components/BacktestHistory';
 import { BacktestRun } from './types';
 import { backtestController } from './services/backtester/controller';
 import './App.css';
+import CorrelationView from './correlation/CorrelationView';
 
 const AppContainer = styled.div`
   min-height: 100vh;
@@ -71,7 +72,7 @@ const Content = styled.div`
   padding: 24px;
 `;
 
-type Tab = 'run' | 'history';
+type Tab = 'run' | 'history' | 'correlation';
 
 const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<Tab>('run');
@@ -107,6 +108,9 @@ const App: React.FC = () => {
           <TabButton active={activeTab === 'history'} onClick={() => setActiveTab('history')}>
             History ({backtests.length})
           </TabButton>
+          <TabButton active={activeTab === 'correlation'} onClick={() => setActiveTab('correlation')}>
+            Correlation
+          </TabButton>
         </TabNav>
       </TabContainer>
 
@@ -114,6 +118,9 @@ const App: React.FC = () => {
         {activeTab === 'run' && <BacktestForm/>}
         {activeTab === 'history' && (
           <BacktestHistory backtests={backtests} onRefresh={fetchBacktests} />
+        )}
+        {activeTab === 'correlation' && (
+          <CorrelationView/>
         )}
       </Content>
     </AppContainer>
